@@ -1,0 +1,263 @@
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0f0f1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-profile {
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #64ffda;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.hero-tags {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-tag {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #64ffda, #4db6ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.hero-contact-section {
+    margin-bottom: 3rem;
+}
+
+.contact-heading {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #64ffda;
+    padding-left: 10px;
+}
+
+.hero-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-text {
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #64ffda;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    /* Reduced margin */
+}
+
+.scroll-arrow {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, #64ffda, transparent);
+}
+
+/* Core Stack Styles */
+.hero-stack-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.stack-heading {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.hero-stack-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: 'Outfit', sans-serif;
+    color: #fff;
+    font-weight: 500;
+}
+
+.stack-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.stack-box:hover {
+    border-color: #64ffda;
+    color: #64ffda;
+    background: rgba(100, 255, 218, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.15);
+}
+
+.stack-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
+    transition: 0.5s;
+}
+
+.stack-box:hover::before {
+    left: 100%;
+}
+
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Cards Visuals (Desktop) */
+.hero-visual {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    display: none;
+    /* Hidden on mobile for now */
+}
+
+@media (min-width: 1024px) {
+    .hero-visual {
+        display: block;
+    }
+}
+
+.floating-card {
+    position: absolute;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-1 {
+    top: 0;
+    right: 0;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    top: 40%;
+    left: 0;
+    animation-delay: 2s;
+}
+
+.card-3 {
+    bottom: 0;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
