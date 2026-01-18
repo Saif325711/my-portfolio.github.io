@@ -57,13 +57,33 @@ const Hero = () => {
                         </div>
 
                         <div className="hero-stack-section">
-                            <p className="stack-heading">Core Stack</p>
-                            <div className="hero-stack-row">
-                                <span className="stack-box">Flutter</span>
-                                <span className="stack-box">Next.js</span>
-                                <span className="stack-box">Node</span>
-                                <span className="stack-box">AI</span>
-                                <span className="stack-box">ML</span>
+                            <div className="orbit-container">
+                                <div className="center-hub">
+                                    <div className="hub-text">Core<br />Stack</div>
+                                </div>
+                                <div className="orbit-ring">
+
+                                    <div className="stack-box">
+                                        <div className="stack-dot"></div>
+                                        <div className="stack-label"><span className="text-rotator">Flutter</span></div>
+                                    </div>
+                                    <div className="stack-box">
+                                        <div className="stack-dot"></div>
+                                        <div className="stack-label"><span className="text-rotator">Node</span></div>
+                                    </div>
+                                    <div className="stack-box">
+                                        <div className="stack-dot"></div>
+                                        <div className="stack-label"><span className="text-rotator">Next.js</span></div>
+                                    </div>
+                                    <div className="stack-box">
+                                        <div className="stack-dot"></div>
+                                        <div className="stack-label"><span className="text-rotator">AI</span></div>
+                                    </div>
+                                    <div className="stack-box">
+                                        <div className="stack-dot"></div>
+                                        <div className="stack-label"><span className="text-rotator">ML</span></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

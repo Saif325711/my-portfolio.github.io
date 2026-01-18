@@ -117,71 +117,171 @@
 
 /* Core Stack Styles */
 .hero-stack-section {
-    margin-top: 3rem;
-    text-align: center;
-}
-
-.stack-heading {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    color: #94a3b8;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-}
-
-.hero-stack-row {
+    margin-top: 2rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    font-family: 'Outfit', sans-serif;
-    color: #fff;
-    font-weight: 500;
+    position: relative;
 }
+
+.orbit-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.center-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 60px;
+    background: rgba(10, 10, 15, 0.95);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.hub-text {
+    font-size: 0.8rem;
+    color: #64ffda;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: orbitRotate 20s linear infinite;
+}
+
+/* Positioning items in a circle */
+/* 1: Flutter (Top) - 270deg */
+.stack-box:nth-child(1) {
+    --angle: 270deg;
+}
+
+/* 2: Node (Top-Right) - 342deg */
+.stack-box:nth-child(2) {
+    --angle: 342deg;
+}
+
+/* 3: Next.js (Bottom-Right) - 54deg */
+.stack-box:nth-child(3) {
+    --angle: 54deg;
+}
+
+/* 4: AI (Bottom-Left) - 126deg */
+.stack-box:nth-child(4) {
+    --angle: 126deg;
+}
+
+/* 5: ML (Left) - 198deg */
+.stack-box:nth-child(5) {
+    --angle: 198deg;
+}
+
+/* Node indices shifted because center-hub is now first child in orbit-ring? 
+   Let's check JSX: 
+   <div className="orbit-ring">
+      <div className="center-hub">...</div>
+      <div className="stack-box">...</div>
+   Yes, center-hub is child 1. So stack-boxes are 2 to 6.
+*/
 
 .stack-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.6rem 1.2rem;
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-}
-
-.stack-box:hover {
-    border-color: #64ffda;
-    color: #64ffda;
-    background: rgba(100, 255, 218, 0.08);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.15);
-}
-
-.stack-box::before {
-    content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.05),
-            transparent);
-    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    /* Rotate to angle, move out 125px (radius) 
+       X-axis now points radially OUTWARD */
+    transform: translate(-50%, -50%) rotate(var(--angle)) translate(125px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 0;
 }
 
-.stack-box:hover::before {
-    left: 100%;
+.stack-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
+
+.stack-label {
+    position: absolute;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    white-space: nowrap;
+    /* Push label outward 30px, then counter-rotate to be upright */
+    transform: translate(30px, 0) rotate(calc(-1 * var(--angle)));
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.text-rotator {
+    display: inline-block;
+    animation: counterRotate 20s linear infinite;
+}
+
+/* inward-arrow styles removed */
+
+/* Hover effects */
+.stack-box:hover .stack-dot {
+    background-color: #64ffda;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.6);
+}
+
+.stack-box:hover .stack-label {
+    color: #64ffda;
+}
+
+/* Arrow hover effects removed */
+
+
 
 
 /* Animations */
+@keyframes orbitRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes counterRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
 .fade-in {
     animation: fadeIn 1s ease-out;
 }
