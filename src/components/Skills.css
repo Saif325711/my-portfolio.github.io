@@ -113,4 +113,8 @@
         padding: var(--space-xs) var(--space-md);
         font-size: var(--font-size-sm);
     }
+
+    .skill-category {
+        padding: var(--space-md);
+    }
 }

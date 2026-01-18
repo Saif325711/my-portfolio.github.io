@@ -130,3 +130,23 @@
     letter-spacing: 1px;
     font-weight: 500;
 }
+
+@media (max-width: 768px) {
+    .summary-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .stats-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}

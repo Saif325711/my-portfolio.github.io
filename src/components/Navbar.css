@@ -179,3 +179,18 @@
 .hire-me-btn:hover {
     background-color: #0f766e;
 }
+
+@media (max-width: 480px) {
+    .mobile-menu-container {
+        width: 85%;
+        right: -85%;
+    }
+
+    .mobile-menu-container.open {
+        right: 0;
+    }
+
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+}
