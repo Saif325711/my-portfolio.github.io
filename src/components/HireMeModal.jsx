@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './HireMeModal.css';
+import { db } from '../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const HireMeModal = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleContentClick = (e) => {
         e.stopPropagation();
@@ -13,11 +16,23 @@ const HireMeModal = ({ isOpen, onClose }) => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form Data:', formData);
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(true);
+        try {
+            await addDoc(collection(db, "messages"), {
+                ...formData,
+                timestamp: serverTimestamp()
+            });
+            alert('Message sent successfully! I will get back to you soon.');
+            setFormData({ name: '', email: '', message: '' });
+            onClose();
+        } catch (error) {
+            console.error("Error sending message: ", error);
+            alert('Failed to send message. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -90,7 +105,9 @@ const HireMeModal = ({ isOpen, onClose }) => {
                             required
                         ></textarea>
                     </div>
-                    <button type="submit" className="modal-send-btn">Send Message</button>
+                    <button type="submit" className="modal-send-btn" disabled={isSubmitting}>
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </button>
                 </form>
             </div>
         </div>
