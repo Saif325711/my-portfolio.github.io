@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import HireMeModal from './HireMeModal';
 
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showHireModal, setShowHireModal] = useState(false);
@@ -50,6 +52,7 @@ const Navbar = () => {
                     <li><a href="#projects" onClick={toggleMenu}>Projects</a></li>
                     <li><a href="#experience" onClick={toggleMenu}>Experience</a></li>
                     <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
+                    <li><Link to="/admin" onClick={toggleMenu}>Login</Link></li>
                 </ul>
 
                 <div className="menu-footer">
