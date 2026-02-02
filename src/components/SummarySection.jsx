@@ -17,7 +17,7 @@ const SummarySection = () => {
 
     const scrollToProjects = (e) => {
         e.preventDefault();
-        const projectsSection = document.getElementById('projects');
+        const projectsSection = document.getElementById('featured-project');
         if (projectsSection) {
             projectsSection.scrollIntoView({ behavior: 'smooth' });
         }
@@ -29,7 +29,7 @@ const SummarySection = () => {
                 <div className="summary-container">
                     {/* Action Buttons */}
                     <div className="action-buttons">
-                        <a href="#projects" onClick={scrollToProjects} className="action-btn btn-primary">
+                        <a href="#featured-project" onClick={scrollToProjects} className="action-btn btn-primary">
                             View Projects
                         </a>
                         <button className="action-btn btn-outline" onClick={openHireModal}>
@@ -72,7 +72,7 @@ const SummarySection = () => {
 
                     {/* Project Promo Box */}
                     <div className="project-label">PROJECT</div>
-                    <div className="project-promo-box">
+                    <div id="featured-project" className="project-promo-box">
                         <div className="promo-content">
                             <h3>Featured Project: E-Commerce Platform</h3>
                             <p>A full-stack solution with payments & auth</p>
