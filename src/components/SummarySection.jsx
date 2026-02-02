@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './SummarySection.css';
+import { useProjects } from '../hooks/useProjects';
 import HireMeModal from './HireMeModal';
 
 const SummarySection = () => {
+    const { projects } = useProjects();
     const [showHireModal, setShowHireModal] = useState(false);
 
     const openHireModal = () => {
@@ -13,13 +15,21 @@ const SummarySection = () => {
         setShowHireModal(false);
     };
 
+    const scrollToProjects = (e) => {
+        e.preventDefault();
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
             <section className="summary-section">
                 <div className="summary-container">
                     {/* Action Buttons */}
                     <div className="action-buttons">
-                        <a href="#projects" className="action-btn btn-primary">
+                        <a href="#projects" onClick={scrollToProjects} className="action-btn btn-primary">
                             View Projects
                         </a>
                         <button className="action-btn btn-outline" onClick={openHireModal}>
@@ -47,7 +57,7 @@ const SummarySection = () => {
                     {/* Stats Cards */}
                     <div className="stats-row">
                         <div className="stat-card">
-                            <span className="stat-number">0</span>
+                            <span className="stat-number">{projects.length}</span>
                             <span className="stat-label">Projects</span>
                         </div>
                         <div className="stat-card">
@@ -58,6 +68,18 @@ const SummarySection = () => {
                             <span className="stat-number">0</span>
                             <span className="stat-label">Blogs</span>
                         </div>
+                    </div>
+
+                    {/* Project Promo Box */}
+                    <div className="project-label">PROJECT</div>
+                    <div className="project-promo-box">
+                        <div className="promo-content">
+                            <h3>Featured Project: E-Commerce Platform</h3>
+                            <p>A full-stack solution with payments & auth</p>
+                        </div>
+                        <a href="https://newbuy.saifulse.app/" target="_blank" rel="noreferrer" className="promo-btn">
+                            View Live
+                        </a>
                     </div>
                 </div>
             </section>

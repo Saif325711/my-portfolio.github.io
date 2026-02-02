@@ -10,7 +10,7 @@ const AdminDashboard = () => {
     const [loading, setLoading] = useState(false);
 
     // Hardcoded password for simplicity as requested
-    const ADMIN_PASSWORD = "admin123";
+    const ADMIN_PASSWORD = "Saiful@123";
 
     const handleLogin = (e) => {
         e.preventDefault();

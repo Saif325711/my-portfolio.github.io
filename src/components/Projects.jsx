@@ -1,26 +1,12 @@
 import React from 'react';
+import { useProjects } from '../hooks/useProjects';
 import './Projects.css';
 
 const Projects = () => {
-    const projects = [
-        {
-            title: 'E-Commerce Website',
-            description: 'A full-stack e-commerce platform with user authentication, product management, and payment integration.',
-            tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-            image: '🛒',
-            github: '#',
-            demo: '#'
-        },
-        {
-            title: 'Restaurant Food Order',
-            description: 'A modern restaurant food ordering system with menu browsing, cart management, and order tracking features.',
-            tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-            image: '🍕',
-            github: '#',
-            demo: '#'
-        }
-    ];
+    const { projects, loading, error } = useProjects();
 
+    if (loading) return <div className="text-center py-10">Loading projects...</div>;
+    if (error) return <div className="text-center py-10 text-red-500">Error loading projects</div>;
     return (
         <section id="projects" className="section projects-section">
             <div className="container">
@@ -56,7 +42,7 @@ const Projects = () => {
                                         <span className="link-icon">→</span>
                                     </a>
                                     <a href={project.demo} className="project-link" target="_blank" rel="noopener noreferrer">
-                                        <span>Live Demo</span>
+                                        <span>View Project</span>
                                         <span className="link-icon">→</span>
                                     </a>
                                 </div>
