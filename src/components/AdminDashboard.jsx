@@ -70,11 +70,12 @@ const AdminDashboard = () => {
                 setReplyText('');
                 setSelectedMessage(null);
             } else {
-                alert('Failed to send reply.');
+                const data = await response.json();
+                alert(`Failed to send reply: ${data.error || 'Unknown error'}`);
             }
         } catch (error) {
             console.error('Error sending reply:', error);
-            alert('Error sending reply.');
+            alert(`Error sending reply: ${error.message}`);
         }
     };
 

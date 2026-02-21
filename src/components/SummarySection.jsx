@@ -61,12 +61,43 @@ const SummarySection = () => {
                             <span className="stat-label">Projects</span>
                         </div>
                         <div className="stat-card">
-                            <span className="stat-number">0</span>
-                            <span className="stat-label">Stacks</span>
+                            <span className="stat-number">6+</span>
+                            <span className="stat-label">Technologies</span>
                         </div>
                         <div className="stat-card">
-                            <span className="stat-number">0</span>
-                            <span className="stat-label">Blogs</span>
+                            <span className="stat-number">2</span>
+                            <span className="stat-label">Articles</span>
+                        </div>
+                    </div>
+
+                    {/* Technologies Section */}
+                    <div className="tech-section">
+                        <h3 className="tech-title">Technologies I Work With</h3>
+                        <div className="tech-grid">
+                            <div className="tech-card">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" />
+                                <span>Flutter</span>
+                            </div>
+                            <div className="tech-card">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" style={{ filter: 'invert(1)' }} />
+                                <span>Next.js</span>
+                            </div>
+                            <div className="tech-card">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+                                <span>Node.js</span>
+                            </div>
+                            <div className="tech-card">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCloud" />
+                                <span>GCloud</span>
+                            </div>
+                            <div className="tech-card">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
+                                <span>Firebase</span>
+                            </div>
+                            <div className="tech-card">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+                                <span>TypeScript</span>
+                            </div>
                         </div>
                     </div>
 
@@ -77,7 +108,7 @@ const SummarySection = () => {
                             <h3>Featured Project: E-Commerce Platform</h3>
                             <p>A full-stack solution with payments & auth</p>
                         </div>
-                        <a href="https://newbuy.saifulse.app/" target="_blank" rel="noreferrer" className="promo-btn">
+                        <a href="https://www.saiflex.in/" target="_blank" rel="noreferrer" className="promo-btn">
                             View Live
                         </a>
                     </div>

@@ -2,64 +2,61 @@ import React from 'react';
 import './About.css';
 
 const About = () => {
+    const skills = [
+        'Flutter & Cross-Platform App Development',
+        'Fullstack Engineering (APIs, Databases, Auth, Deployment)',
+        'Modern Web Development (Next.js, React)',
+        'Microsoft Azure (App Services, Functions, Storage)',
+        'AI / ML Integration (practical product-focused use-cases)'
+    ];
+
+    const focusAreas = [
+        'Building platforms that solve real regional needs',
+        'Optimizing performance & DX in multi-module apps',
+        'Product thinking + clean maintainable architecture'
+    ];
+
     return (
         <section id="about" className="section about-section">
             <div className="container">
-                <h2 className="section-title">About Me</h2>
+                <h2 className="section-title">About</h2>
 
                 <div className="about-content">
                     <div className="about-text fade-in">
                         <p className="about-intro">
-                            I'm a passionate <strong>Computer Science Engineering student</strong> with a deep love for
-                            coding and problem-solving. My journey in tech started with curiosity and has evolved into
-                            a commitment to building innovative solutions.
+                            I'm <strong>Saiful Islam</strong>, a BTech CSE (2027) student and passionate fullstack & Flutter
+                            developer focused on building reliable, scalable, and user-centered digital products. I enjoy
+                            architecting end-to-end solutions—from intuitive interfaces to robust backend systems and cloud
+                            infrastructure.
                         </p>
 
-                        <p>
-                            Currently pursuing my degree in CSE, I'm focused on mastering web development technologies
-                            and expanding my knowledge in software engineering principles. I believe in continuous learning
-                            and staying updated with the latest industry trends.
+                        <p className="about-description">
+                            My toolset spans Web Development, Flutter, API design, databases, and Microsoft Azure cloud
+                            services. I'm also expanding into practical AI integrations that add real value to products.
                         </p>
+                    </div>
 
-                        <div className="about-highlights">
-                            <div className="highlight-item glass-card">
-                                <div className="highlight-icon">🎓</div>
-                                <div className="highlight-content">
-                                    <h4>Education</h4>
-                                    <p>B.Tech in Computer Science Engineering</p>
-                                </div>
-                            </div>
-
-                            <div className="highlight-item glass-card">
-                                <div className="highlight-icon">💡</div>
-                                <div className="highlight-content">
-                                    <h4>Focus</h4>
-                                    <p>Web Development & Programming</p>
-                                </div>
-                            </div>
-
-                            <div className="highlight-item glass-card">
-                                <div className="highlight-icon">🎯</div>
-                                <div className="highlight-content">
-                                    <h4>Goal</h4>
-                                    <p>Building impactful digital solutions</p>
-                                </div>
-                            </div>
+                    <div className="about-columns">
+                        <div className="about-card glass-card fade-in">
+                            <h3 className="about-card-title">
+                                <span className="card-icon">⚡</span> Skills
+                            </h3>
+                            <ul className="about-list">
+                                {skills.map((skill, index) => (
+                                    <li key={index}>{skill}</li>
+                                ))}
+                            </ul>
                         </div>
 
-                        <div className="about-stats">
-                            <div className="stat-item">
-                                <div className="stat-number text-gradient">10+</div>
-                                <div className="stat-label">Projects Completed</div>
-                            </div>
-                            <div className="stat-item">
-                                <div className="stat-number text-gradient">5+</div>
-                                <div className="stat-label">Technologies Mastered</div>
-                            </div>
-                            <div className="stat-item">
-                                <div className="stat-number text-gradient">100%</div>
-                                <div className="stat-label">Dedication</div>
-                            </div>
+                        <div className="about-card glass-card fade-in">
+                            <h3 className="about-card-title">
+                                <span className="card-icon">🎯</span> Focus Areas
+                            </h3>
+                            <ul className="about-list">
+                                {focusAreas.map((area, index) => (
+                                    <li key={index}>{area}</li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>

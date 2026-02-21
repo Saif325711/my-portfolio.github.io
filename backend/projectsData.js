@@ -6,7 +6,7 @@ export const projects = [
         tech: ['React', 'Node.js', 'MongoDB', 'Express'],
         image: '🛒',
         github: '#',
-        demo: 'https://newbuy.saifulse.app/'
+        demo: 'https://www.saiflex.in/'
     },
     {
         id: 2,

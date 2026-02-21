@@ -1,10 +1,26 @@
 .about-section {
-    background: rgba(18, 18, 26, 0.5);
+    padding: 7rem 2rem 5rem;
+    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0f0f1a 100%);
+    min-height: 100vh;
+}
+
+.about-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #e2e8f0;
+    margin-bottom: 2.5rem;
+    font-family: 'Outfit', sans-serif;
 }
 
 .about-content {
-    max-width: 900px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
 .about-text {
@@ -12,99 +28,95 @@
 }
 
 .about-intro {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-lg);
+    font-size: 1.1rem;
+    color: #cbd5e1;
     line-height: 1.8;
+    margin-bottom: 1rem;
 }
 
 .about-intro strong {
-    background: var(--gradient-primary);
+    background: linear-gradient(to right, #64ffda, #4db6ac);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: var(--font-weight-bold);
+    font-weight: 700;
 }
 
-.about-highlights {
+.about-description {
+    font-size: 1rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+.about-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-lg);
-    margin: var(--space-2xl) 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
-.highlight-item {
+.about-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(100, 255, 218, 0.25);
+}
+
+.about-card-title {
+    font-size: 1.15rem;
+    color: #e2e8f0;
+    margin-bottom: 1.2rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    text-align: left;
-    transition: all var(--transition-base);
+    gap: 0.5rem;
 }
 
-.highlight-item:hover {
-    transform: translateY(-5px);
+.card-icon {
+    font-size: 1.3rem;
 }
 
-.highlight-icon {
-    font-size: var(--font-size-4xl);
-    flex-shrink: 0;
-}
-
-.highlight-content h4 {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-xs);
-}
-
-.highlight-content p {
-    font-size: var(--font-size-base);
-    color: var(--color-text-secondary);
+.about-list {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--space-xl);
-    margin-top: var(--space-3xl);
-    padding-top: var(--space-2xl);
-    border-top: 1px solid var(--color-border);
+.about-list li {
+    color: #94a3b8;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    padding-left: 1.2rem;
+    position: relative;
 }
 
-.stat-item {
-    text-align: center;
-}
-
-.stat-number {
-    font-size: var(--font-size-5xl);
-    font-weight: var(--font-weight-extrabold);
-    line-height: 1;
-    margin-bottom: var(--space-sm);
-}
-
-.stat-label {
-    font-size: var(--font-size-base);
-    color: var(--color-text-muted);
-    font-weight: var(--font-weight-medium);
+.about-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
+    .about-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-columns {
+        grid-template-columns: 1fr;
+    }
+
     .about-intro {
-        font-size: var(--font-size-lg);
-    }
-
-    .about-highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-    }
-
-    .stat-number {
-        font-size: var(--font-size-4xl);
+        font-size: 1rem;
     }
 }
