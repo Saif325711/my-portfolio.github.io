@@ -70,6 +70,7 @@ const SummarySection = () => {
                         </div>
                     </div>
 
+
                     {/* Technologies Section */}
                     <div className="tech-section">
                         <h3 className="tech-title">Technologies I Work With</h3>
@@ -107,7 +108,7 @@ const SummarySection = () => {
                         <div className="project-square-card">
                             <span className="square-icon">🛒</span>
                             <h3>E-Commerce Platform</h3>
-                            <p>Full-stack solution with payments & auth</p>
+                            <p>A complete online store featuring product listings, cart, secure payments & user authentication.</p>
                             <a href="https://www.saiflex.in/" target="_blank" rel="noreferrer" className="promo-btn">
                                 View Live
                             </a>
@@ -115,8 +116,8 @@ const SummarySection = () => {
 
                         <div className="project-square-card">
                             <span className="square-icon">📱</span>
-                            <h3>Urban Mobile App</h3>
-                            <p>Download the APK and experience the app</p>
+                            <h3>Kamjodo</h3>
+                            <p>Find daily work professionals near you — electricians, cooks, plumbers, mechanics, drivers & more.</p>
                             <a
                                 href="https://drive.google.com/uc?export=download&id=1XdoxgbfboJYPThhiNLwPQzvWbJae09z6"
                                 className="promo-btn download-btn"
@@ -129,7 +130,7 @@ const SummarySection = () => {
                         <div className="project-square-card">
                             <span className="square-icon">💼</span>
                             <h3>Zoblio — Job Platform</h3>
-                            <p>Post jobs & apply for opportunities</p>
+                            <p>A job portal where employers can post openings and candidates can search, filter & apply for opportunities.</p>
                             <a
                                 href="https://zoblio.vercel.app/"
                                 target="_blank"

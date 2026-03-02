@@ -55,8 +55,16 @@ const Hero = () => {
             <section id="hero" className="hero-section">
                 <div className="container">
                     <div className="hero-content fade-in">
-                        <div className="hero-profile">
-                            <img src={profileImg} alt="Saiful Islam" className="profile-image" />
+                        <div className="hero-profile-wrapper">
+                            <div className="hero-profile">
+                                <img src={profileImg} alt="Saiful Islam" className="profile-image" />
+                            </div>
+                            <div className="hero-tech-logos">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" title="Flutter" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" title="Next.js" style={{ filter: 'invert(1)' }} />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCloud" title="GCloud" />
+                            </div>
                         </div>
 
                         <div className="hero-tags">
@@ -70,7 +78,7 @@ const Hero = () => {
                         </h1>
 
                         <p className="hero-description">
-                            I craft <span className="typing-text">{displayText}</span><span className="typing-cursor">|</span> that scales across web, mobile, cloud & AI platforms.
+                            I craft <span className="typing-wrapper"><span className="typing-text">{displayText}</span><span className="typing-cursor">|</span></span> that scales across web, mobile, cloud & AI platforms.
                         </p>
 
                         <div className="hero-contact-section" style={{ marginTop: '20px' }}>
