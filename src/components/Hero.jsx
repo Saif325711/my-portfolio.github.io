@@ -1,10 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import profileImg from '/profile.jpeg';
 import HireMeModal from './HireMeModal';
 
+const TYPING_WORDS = [
+    'Flutter Apps',
+    'Fullstack Systems',
+    'Modern Web',
+    'Google Cloud',
+    'AI Integration',
+];
+
 const Hero = () => {
     const [showHireModal, setShowHireModal] = useState(false);
+    const [wordIndex, setWordIndex] = useState(0);
+    const [displayText, setDisplayText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const currentWord = TYPING_WORDS[wordIndex];
+        let timeout;
+
+        if (!isDeleting && displayText === currentWord) {
+            // Pause at full word, then start deleting
+            timeout = setTimeout(() => setIsDeleting(true), 1800);
+        } else if (isDeleting && displayText === '') {
+            // Move to next word
+            setIsDeleting(false);
+            setWordIndex((prev) => (prev + 1) % TYPING_WORDS.length);
+        } else {
+            const speed = isDeleting ? 50 : 100;
+            timeout = setTimeout(() => {
+                setDisplayText(
+                    isDeleting
+                        ? currentWord.substring(0, displayText.length - 1)
+                        : currentWord.substring(0, displayText.length + 1)
+                );
+            }, speed);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [displayText, isDeleting, wordIndex]);
 
     const openHireModal = () => {
         setShowHireModal(true);
@@ -33,13 +69,8 @@ const Hero = () => {
                             Hi, I'm <span className="text-gradient">Saiful Islam</span>
                         </h1>
 
-                        <h2 className="hero-subtitle">
-                            Computer Science Engineering Student & Web Developer
-                        </h2>
-
                         <p className="hero-description">
-                            Passionate about building elegant solutions to complex problems through code.
-                            Specializing in web development with a strong foundation in programming fundamentals.
+                            I craft <span className="typing-text">{displayText}</span><span className="typing-cursor">|</span> that scales across web, mobile, cloud & AI platforms.
                         </p>
 
                         <div className="hero-contact-section" style={{ marginTop: '20px' }}>

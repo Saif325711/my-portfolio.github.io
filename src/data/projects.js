@@ -15,4 +15,14 @@ export const projects = [
         github: '#',
         demo: '#'
     }
+    ,
+    {
+        title: 'Zoblio — Job Board',
+        description: 'A job board where users can post jobs and apply to posted jobs.',
+        tech: ['React', 'Vercel'],
+        image: '💼',
+        github: '#',
+        demo: 'https://zoblio.vercel.app/'
+    }
 ];
+

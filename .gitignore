@@ -15,7 +15,15 @@ dist-ssr
 # Environment variables (IMPORTANT: Contains sensitive data)
 .env
 backend/.env
+functions/.env
 *.env
+
+# Service account keys (secrets)
+**/serviceAccountKey.json
+**/serviceAccountKey*.json
+
+# Temp files
+temp_*.js
 
 # Editor directories and files
 .vscode/*

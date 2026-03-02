@@ -81,12 +81,11 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                <ul className="menu-links">
+                    <ul className="menu-links">
                     <li><a href="#" onClick={(e) => handleNavClick(e, 'top')}>Home</a></li>
                     <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
                     <li><Link to="/blogs" onClick={toggleMenu}>Blogs</Link></li>
                     <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
-                    <li><Link to="/admin" onClick={toggleMenu}>Login</Link></li>
                 </ul>
 
                 <div className="menu-footer">

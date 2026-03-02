@@ -101,16 +101,44 @@ const SummarySection = () => {
                         </div>
                     </div>
 
-                    {/* Project Promo Box */}
-                    <div className="project-label">PROJECT</div>
-                    <div id="featured-project" className="project-promo-box">
-                        <div className="promo-content">
-                            <h3>Featured Project: E-Commerce Platform</h3>
-                            <p>A full-stack solution with payments & auth</p>
+                    {/* Projects Grid Row */}
+                    <div className="project-label">PROJECTS</div>
+                    <div id="featured-project" className="projects-row">
+                        <div className="project-square-card">
+                            <span className="square-icon">🛒</span>
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack solution with payments & auth</p>
+                            <a href="https://www.saiflex.in/" target="_blank" rel="noreferrer" className="promo-btn">
+                                View Live
+                            </a>
                         </div>
-                        <a href="https://www.saiflex.in/" target="_blank" rel="noreferrer" className="promo-btn">
-                            View Live
-                        </a>
+
+                        <div className="project-square-card">
+                            <span className="square-icon">📱</span>
+                            <h3>Urban Mobile App</h3>
+                            <p>Download the APK and experience the app</p>
+                            <a
+                                href="https://drive.google.com/uc?export=download&id=1XdoxgbfboJYPThhiNLwPQzvWbJae09z6"
+                                className="promo-btn download-btn"
+                                download
+                            >
+                                ⬇ Download APK
+                            </a>
+                        </div>
+
+                        <div className="project-square-card">
+                            <span className="square-icon">💼</span>
+                            <h3>Zoblio — Job Platform</h3>
+                            <p>Post jobs & apply for opportunities</p>
+                            <a
+                                href="https://zoblio.vercel.app/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="promo-btn download-btn"
+                            >
+                                🔗 Visit Site
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

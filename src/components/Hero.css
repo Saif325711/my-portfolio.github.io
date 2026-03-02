@@ -71,6 +71,34 @@
     margin-bottom: 2.5rem;
 }
 
+.typing-text {
+    color: #64ffda;
+    font-weight: 600;
+    background: linear-gradient(to right, #64ffda, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-cursor {
+    color: #64ffda;
+    font-weight: 300;
+    animation: blink 0.8s step-end infinite;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
 .hero-contact-section {
     margin-bottom: 3rem;
 }

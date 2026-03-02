@@ -7,7 +7,7 @@ import About from './components/About';
 import Blogs from './components/Blogs';
 import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
-import AdminDashboard from './components/AdminDashboard';
+// AdminDashboard removed
 import './index.css';
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
               <Footer />
             </>
           } />
-          <Route path="/admin" element={<AdminDashboard />} />
+          {/* Admin route removed */}
         </Routes>
       </div>
     </Router>
