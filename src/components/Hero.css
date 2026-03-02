@@ -6,6 +6,7 @@
     background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0f0f1a 100%);
     position: relative;
     overflow: hidden;
+    max-width: 100vw;
 }
 
 .hero-content {
@@ -156,6 +157,7 @@
     position: relative;
     width: 400px;
     height: 400px;
+    max-width: 100%;
 }
 
 .center-hub {
@@ -398,6 +400,8 @@
         justify-content: center;
         text-align: center;
         padding-top: 100px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .hero-content {
@@ -405,6 +409,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow: hidden;
     }
 
     .hero-tags {
@@ -412,17 +417,19 @@
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
-    .hero-subtitle {
-        font-size: 1.2rem;
+    .hero-description {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
     }
 
     .hero-contact-section {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .contact-heading {
@@ -437,7 +444,52 @@
         align-items: center;
     }
 
+    .contact-text {
+        font-size: 0.85rem;
+    }
+
     .hero-visual {
         display: none;
+    }
+
+    .orbit-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orbit-ring {
+        width: 180px;
+        height: 180px;
+    }
+
+    .stack-box {
+        transform: translate(-50%, -50%) rotate(var(--angle)) translate(90px);
+    }
+
+    .stack-label {
+        font-size: 0.7rem;
+        transform: translate(20px, 0) rotate(calc(-1 * var(--angle)));
+    }
+
+    .center-hub {
+        width: 60px;
+        height: 45px;
+    }
+
+    .hub-text {
+        font-size: 0.65rem;
+    }
+
+    .hero-scroll {
+        margin-top: 1rem;
+    }
+
+    .scroll-arrow {
+        height: 40px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
     }
 }
