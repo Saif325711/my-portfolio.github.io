@@ -16,18 +16,22 @@ const ContactPage = () => {
         e.preventDefault();
         setIsSubmitting(true);
         try {
-            // Save to Firebase as backup
-            await addDoc(collection(db, "messages"), {
-                ...formData,
-                timestamp: serverTimestamp()
-            });
-
-            // Send email notification
+            // Send email notification FIRST (Prioritize email delivery)
             await fetch('https://contact-415799168520.us-central1.run.app', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
+
+            // Save to Firebase as backup
+            try {
+                await addDoc(collection(db, "messages"), {
+                    ...formData,
+                    timestamp: serverTimestamp()
+                });
+            } catch (fbError) {
+                console.warn("Firebase backup failed, but email was sent:", fbError);
+            }
 
             alert('Message sent successfully! I will get back to you soon.');
             setFormData({ name: '', email: '', message: '' });
